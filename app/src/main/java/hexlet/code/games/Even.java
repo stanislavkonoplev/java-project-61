@@ -13,7 +13,7 @@ public class Even {
             var question = Engine.random(1, 100);
             String correctAnswer = question % 2 == 0 ? "yes" : "no";
 
-            data[0][i] = Integer.toString(question);
+            data[0][i] = String.valueOf(question);
             data[1][i] = correctAnswer;
         }
 
