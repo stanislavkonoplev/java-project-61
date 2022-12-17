@@ -4,3 +4,5 @@
 https://asciinema.org/a/xJ1JJFXZ2Xxq2l2l2SlNsbekt
 # asciinema Calc
 https://asciinema.org/a/zbwbakBUpdolKDyVP7n2ZtPmG
+# asciinema GCD
+https://asciinema.org/a/AhnC6c5NRhhDX9fjfDnQVqIra

@@ -2,37 +2,31 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Calc {
 
-    public static void calculate() {
+    public static void gameCalc() {
         var gamer = Engine.greet();
         String operator = "";
         String correctAnswer = "";
         int winCount = 3;
         var data = new String[2][winCount];
-        int min = 1;
-        int max = 3;
-        int diff = max - min;
-        Random seed = new Random();
 
         for (var i = 0; i < winCount; i++) {
-            var a = Engine.random();
-            var b = Engine.random();
-            var operatorNumber = seed.nextInt(diff + 1) + min;
+            var a = Engine.random(1, 20);
+            var b = Engine.random(1, 20);
+            var operatorNumber = Engine.random(1, 3);
             switch (operatorNumber) {
                 case 1 -> {
                     operator = "+";
-                    correctAnswer = Integer.toString(a + b);
+                    correctAnswer = String.valueOf(a + b);
                 }
                 case 2 -> {
                     operator = "-";
-                    correctAnswer = Integer.toString(a - b);
+                    correctAnswer = String.valueOf(a - b);
                 }
                 case 3 -> {
                     operator = "*";
-                    correctAnswer = Integer.toString(a * b);
+                    correctAnswer = String.valueOf(a * b);
                 }
                 default -> {
                 }

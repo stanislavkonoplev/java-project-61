@@ -15,9 +15,7 @@ public class Engine {
         return name;
     }
 
-    public static int random() {
-        int min = 1;
-        int max = 100;
+    public static int random(int min, int max) {
         int diff = max - min;
         Random seed = new Random();
         return seed.nextInt(diff + 1) + min;
