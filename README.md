@@ -8,3 +8,7 @@ https://asciinema.org/a/zbwbakBUpdolKDyVP7n2ZtPmG
 https://asciinema.org/a/AhnC6c5NRhhDX9fjfDnQVqIra
 # asciinema Progression
 https://asciinema.org/a/Unzdogt6rnmS1d2nBS1C4EMwq
+# asciinema Prime
+ https://asciinema.org/a/wRNDnNceZrdhpxPNL5JXbqzpl
+
+

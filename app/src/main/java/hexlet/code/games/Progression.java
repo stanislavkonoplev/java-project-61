@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.StringJoiner;
 
 public class Progression {
