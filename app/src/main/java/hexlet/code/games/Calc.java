@@ -9,12 +9,12 @@ public class Calc {
         String operator = "";
         String correctAnswer = "";
         int winCount = 3;
-        var data = new String[2][winCount];
+        var questionsAndAnswers = new String[2][winCount];
 
         for (var i = 0; i < winCount; i++) {
-            var a = Engine.random(1, 20);
-            var b = Engine.random(1, 20);
-            var operatorNumber = Engine.random(1, 3);
+            var a = Engine.getRandom(1, 20);
+            var b = Engine.getRandom(1, 20);
+            var operatorNumber = Engine.getRandom(1, 3);
             switch (operatorNumber) {
                 case 1 -> {
                     operator = "+";
@@ -34,11 +34,11 @@ public class Calc {
 
             String question = a + " " + operator + " " + b;
 
-            data[0][i] = question;
-            data[1][i] = correctAnswer;
+            questionsAndAnswers[0][i] = question;
+            questionsAndAnswers[1][i] = correctAnswer;
         }
 
         System.out.println("What is the result of the expression?");
-        Engine.game(data, gamer);
+        Engine.game(questionsAndAnswers, gamer);
     }
 }

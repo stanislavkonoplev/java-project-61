@@ -8,13 +8,13 @@ public class Progression {
     public static void gameProgression() {
         var gamer = Engine.greet();
         int winCount = 3;
-        var data = new String[2][winCount];
+        var questionsAndAnswers = new String[2][winCount];
 
         for (var i = 0; i < winCount; i++) {
-            var length  = Engine.random(5, 10);
-            var position = Engine.random(1, length);
-            var step = Engine.random(2, 5);
-            var startNumber = Engine.random(1, 20);
+            var length  = Engine.getRandom(5, 10);
+            var position = Engine.getRandom(1, length);
+            var step = Engine.getRandom(2, 5);
+            var startNumber = Engine.getRandom(1, 20);
             var correctAnswer = startNumber;
             var progressionItems = new StringJoiner(" ");
 
@@ -28,12 +28,12 @@ public class Progression {
                 startNumber = startNumber + step;
             }
 
-            data[0][i] = String.valueOf(progressionItems);
-            data[1][i] = String.valueOf(correctAnswer);
+            questionsAndAnswers[0][i] = String.valueOf(progressionItems);
+            questionsAndAnswers[1][i] = String.valueOf(correctAnswer);
         }
 
         System.out.println("What number is missing in the progression?");
-        Engine.game(data, gamer);
+        Engine.game(questionsAndAnswers, gamer);
     }
 }
 
