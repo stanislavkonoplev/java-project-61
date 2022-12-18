@@ -7,19 +7,23 @@ public class Progression {
 
     public static void gameProgression() {
         var gamer = Engine.greet();
-        int winCount = 3;
+        final int winCount = 3;
+        final int minRandomLength = 5;
+        final int maxRandomLength = 10;
+        final int maxRandomStep = 5;
+        final int maxRandomStartNumber = 20;
         var questionsAndAnswers = new String[2][winCount];
 
         for (var i = 0; i < winCount; i++) {
-            var length  = Engine.getRandom(5, 10);
-            var position = Engine.getRandom(1, length);
-            var step = Engine.getRandom(2, 5);
-            var startNumber = Engine.getRandom(1, 20);
+            var progLength  = Engine.getRandom(minRandomLength, maxRandomLength);
+            var questionPosition = Engine.getRandom(1, progLength);
+            var step = Engine.getRandom(2, maxRandomStep);
+            var startNumber = Engine.getRandom(1, maxRandomStartNumber);
             var correctAnswer = startNumber;
             var progressionItems = new StringJoiner(" ");
 
-            for (var j = 1; j <= length; j++) {
-                if (j == position) {
+            for (var j = 1; j <= progLength; j++) {
+                if (j == questionPosition) {
                     progressionItems.add("..");
                     correctAnswer = startNumber;
                 } else {

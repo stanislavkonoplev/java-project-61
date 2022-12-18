@@ -35,7 +35,7 @@ public class Engine {
 
     public static void game(String[][] questionsAndAnswers, String playerName) {
         Scanner scanner = new Scanner(System.in);
-        var winCount = 3;
+        final int winCount = 3;
 
         var i = 0;
         while (i < winCount) {

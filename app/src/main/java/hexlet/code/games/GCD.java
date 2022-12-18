@@ -6,14 +6,18 @@ public class GCD {
 
     public static void gameGCD() {
         var gamer = Engine.greet();
-        int winCount = 3;
+        final int winCount = 3;
+        final int maxRandomNumber = 10;
+        final int maxRandomNumber2 = 3;
         var questionsAndAnswers = new String[2][winCount];
         String listOfPrimeMultipliers = "2 3 5 7";
         var primeMultipliers = Engine.getNumbers(listOfPrimeMultipliers);
 
         for (var i = 0; i < winCount; i++) {
-            var firstNumber = Engine.getRandom(1, 10) * primeMultipliers[Engine.getRandom(0, 3)] * 2;
-            var secondNumber = Engine.getRandom(1, 10) * primeMultipliers[Engine.getRandom(0, 3)] * 2;
+            var firstNumber = Engine.getRandom(1, maxRandomNumber)
+                    * primeMultipliers[Engine.getRandom(0, maxRandomNumber2)] * 2;
+            var secondNumber = Engine.getRandom(1, maxRandomNumber)
+                    * primeMultipliers[Engine.getRandom(0, maxRandomNumber2)] * 2;
 
             String question = firstNumber + " " + secondNumber;
             String correctAnswer = String.valueOf(getGCD(firstNumber, secondNumber));
@@ -27,7 +31,7 @@ public class GCD {
     }
 
     private static int[] factorize(int number) {
-        var enoughPrimeMultipliersCount = 4;
+        final var enoughPrimeMultipliersCount = 4;
         var multipliersDegrees = new int[enoughPrimeMultipliersCount];
 
         String listOfPrimeMultipliers = "2 3 5 7";
@@ -43,7 +47,7 @@ public class GCD {
     }
 
     private static int[] getNextNumAndMultiplierDegree(int number, int primeMultiplier) {
-        var maxDegreeOfPrimeMultiplier = 6;
+        final var maxDegreeOfPrimeMultiplier = 6;
         var nextNumAndMultiplierDegree = new int[2];
 
         var i = 0;

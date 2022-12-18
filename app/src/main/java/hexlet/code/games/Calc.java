@@ -8,13 +8,15 @@ public class Calc {
         var gamer = Engine.greet();
         String operator = "";
         String correctAnswer = "";
-        int winCount = 3;
+        final int winCount = 3;
+        final int maxRandomNumber = 20;
+        final int maxRandomNumber2 = 3;
         var questionsAndAnswers = new String[2][winCount];
 
         for (var i = 0; i < winCount; i++) {
-            var a = Engine.getRandom(1, 20);
-            var b = Engine.getRandom(1, 20);
-            var operatorNumber = Engine.getRandom(1, 3);
+            var a = Engine.getRandom(1, maxRandomNumber);
+            var b = Engine.getRandom(1, maxRandomNumber);
+            var operatorNumber = Engine.getRandom(1, maxRandomNumber2);
             switch (operatorNumber) {
                 case 1 -> {
                     operator = "+";
@@ -24,7 +26,7 @@ public class Calc {
                     operator = "-";
                     correctAnswer = String.valueOf(a - b);
                 }
-                case 3 -> {
+                case maxRandomNumber2 -> {
                     operator = "*";
                     correctAnswer = String.valueOf(a * b);
                 }
