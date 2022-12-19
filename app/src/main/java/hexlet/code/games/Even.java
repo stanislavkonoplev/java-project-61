@@ -6,12 +6,12 @@ public class Even {
 
     public static void gameEven() {
         var gamer = Engine.greet();
-        final int winCount = 3;
-        final int maxRandomNumber = 100;
-        var questionsAndAnswers = new String[2][winCount];
+        final int winRoundsCount = 3;
+        final int maxNumber = 100;
+        var questionsAndAnswers = new String[2][winRoundsCount];
 
-        for (var i = 0; i < winCount; i++) {
-            var question = Engine.getRandom(1, maxRandomNumber);
+        for (var i = 0; i < winRoundsCount; i++) {
+            var question = Engine.getRandom(1, maxNumber);
             String correctAnswer = question % 2 == 0 ? "yes" : "no";
 
             questionsAndAnswers[0][i] = String.valueOf(question);

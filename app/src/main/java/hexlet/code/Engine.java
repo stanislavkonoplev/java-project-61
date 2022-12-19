@@ -35,10 +35,10 @@ public class Engine {
 
     public static void game(String[][] questionsAndAnswers, String playerName) {
         Scanner scanner = new Scanner(System.in);
-        final int winCount = 3;
+        final int winRoundsCount = 3;
 
         var i = 0;
-        while (i < winCount) {
+        while (i < winRoundsCount) {
             System.out.println("Question: " + questionsAndAnswers[0][i]);
             String answer = scanner.next();
             System.out.println("You answer: " + answer);
@@ -50,7 +50,7 @@ public class Engine {
                         + questionsAndAnswers[1][i] + "'.\nLet's try again, " + playerName + "!");
                 break;
             }
-            if (i == winCount) {
+            if (i == winRoundsCount) {
                 System.out.println("Congratulations, " + playerName + "!");
             }
         }

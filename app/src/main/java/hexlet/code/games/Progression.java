@@ -7,18 +7,18 @@ public class Progression {
 
     public static void gameProgression() {
         var gamer = Engine.greet();
-        final int winCount = 3;
-        final int minRandomLength = 5;
-        final int maxRandomLength = 10;
-        final int maxRandomStep = 5;
-        final int maxRandomStartNumber = 20;
-        var questionsAndAnswers = new String[2][winCount];
+        final int winRoundsCount = 3;
+        final int minProgLength = 5;
+        final int maxProgLength = 10;
+        final int maxStep = 5;
+        final int maxStartNumber = 20;
+        var questionsAndAnswers = new String[2][winRoundsCount];
 
-        for (var i = 0; i < winCount; i++) {
-            var progLength  = Engine.getRandom(minRandomLength, maxRandomLength);
+        for (var i = 0; i < winRoundsCount; i++) {
+            var progLength  = Engine.getRandom(minProgLength, maxProgLength);
             var questionPosition = Engine.getRandom(1, progLength);
-            var step = Engine.getRandom(2, maxRandomStep);
-            var startNumber = Engine.getRandom(1, maxRandomStartNumber);
+            var step = Engine.getRandom(2, maxStep);
+            var startNumber = Engine.getRandom(1, maxStartNumber);
             var correctAnswer = startNumber;
             var progressionItems = new StringJoiner(" ");
 
