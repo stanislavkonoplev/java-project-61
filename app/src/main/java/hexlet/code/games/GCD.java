@@ -10,7 +10,7 @@ public class GCD {
         final int maxRandomNumber = 10;
         final int maxRandomNumber2 = 3;
         var questionsAndAnswers = new String[2][winCount];
-        String listOfPrimeMultipliers = "2 3 5 7";
+        String listOfPrimeMultipliers = "2 3 5 7 11";
         var primeMultipliers = Engine.getNumbers(listOfPrimeMultipliers);
 
         for (var i = 0; i < winCount; i++) {
@@ -20,7 +20,7 @@ public class GCD {
                     * primeMultipliers[Engine.getRandom(0, maxRandomNumber2)] * 2;
 
             String question = firstNumber + " " + secondNumber;
-            String correctAnswer = String.valueOf(getGCD(firstNumber, secondNumber));
+            String correctAnswer = String.valueOf(getGCD(firstNumber, secondNumber, primeMultipliers));
 
             questionsAndAnswers[0][i] = question;
             questionsAndAnswers[1][i] = correctAnswer;
@@ -30,14 +30,11 @@ public class GCD {
         Engine.game(questionsAndAnswers, gamer);
     }
 
-    private static int[] factorize(int number) {
-        final var enoughPrimeMultipliersCount = 4;
-        var multipliersDegrees = new int[enoughPrimeMultipliersCount];
+    private static int[] factorize(int number, int[] primeMultipliers) {
+        var primeMultipliersCount = primeMultipliers.length;
+        var multipliersDegrees = new int[primeMultipliersCount];
 
-        String listOfPrimeMultipliers = "2 3 5 7";
-        var primeMultipliers = Engine.getNumbers(listOfPrimeMultipliers);
-
-        for (var i = 0; i < enoughPrimeMultipliersCount; i++) {
+        for (var i = 0; i < primeMultipliersCount; i++) {
             var data = getNextNumAndMultiplierDegree(number, primeMultipliers[i]);
             number = data[0];
             multipliersDegrees[i] = data[1];
@@ -65,11 +62,9 @@ public class GCD {
         return nextNumAndMultiplierDegree;
     }
 
-    private static int getGCD(int firstNumber, int secondNumber) {
-        var firstDegrees = factorize(firstNumber);
-        var secondDegrees = factorize(secondNumber);
-        String listOfPrimeMultipliers = "2 3 5 7";
-        var primeMultipliers = Engine.getNumbers(listOfPrimeMultipliers);
+    private static int getGCD(int firstNumber, int secondNumber, int[] primeMultipliers) {
+        var firstDegrees = factorize(firstNumber, primeMultipliers);
+        var secondDegrees = factorize(secondNumber, primeMultipliers);
         int valueGCD = 1;
         var primeMultipliersCount = primeMultipliers.length;
 
