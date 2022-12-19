@@ -15,9 +15,9 @@ public class GCD {
 
         for (var i = 0; i < winRoundsCount; i++) {
             var firstNumber = Engine.getRandom(1, maxNumber)
-                    * primeMultipliers[Engine.getRandom(0, primeMultipliersCount)] * 2;
+                    * primeMultipliers[Engine.getRandom(0, primeMultipliersCount - 1)] * 2;
             var secondNumber = Engine.getRandom(1, maxNumber)
-                    * primeMultipliers[Engine.getRandom(0, primeMultipliersCount)] * 2;
+                    * primeMultipliers[Engine.getRandom(0, primeMultipliersCount - 1)] * 2;
 
             String question = firstNumber + " " + secondNumber;
             String correctAnswer = String.valueOf(getGCD(firstNumber, secondNumber, primeMultipliers));
