@@ -18,12 +18,14 @@ public class Calc {
 
             var operatorNumber = Engine.getRandom(1, operatorsCount);
 
-            switch (operatorNumber) {
-                case 1 -> operator = "+";
-                case 2 -> operator = "-";
-                case operatorsCount -> operator = "*";
-                default -> {
-                }
+            if (operatorNumber == 1) {
+                operator = "+";
+            }
+            if (operatorNumber == 2) {
+                operator = "-";
+            }
+            if (operatorNumber == operatorsCount) {
+                operator = "*";
             }
 
             String question = firstNumber + " " + operator + " " + secondNumber;
@@ -38,12 +40,14 @@ public class Calc {
 
     private static int calculate(int number1, int number2, String operator) {
 
-        switch (operator) {
-            case "+" -> number1 = number1 + number2;
-            case "-" -> number1 = number1 - number2;
-            case "*" -> number1 = number1 * number2;
-            default -> {
-            }
+        if (operator.equals("+")) {
+            number1 = number1 + number2;
+        }
+        if (operator.equals("-")) {
+            number1 = number1 - number2;
+        }
+        if (operator.equals("*")) {
+            number1 = number1 * number2;
         }
 
         return number1;
