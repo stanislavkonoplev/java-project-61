@@ -6,7 +6,6 @@ public class Calc {
 
     public static void gameCalc() {
         var gamer = Engine.greet();
-        String operator = "";
         final int maxNumber = 100;
         final int operatorsCount = 3;
         var winRoundsCount = Engine.getWinRoundsCount();
@@ -15,18 +14,14 @@ public class Calc {
         for (var i = 0; i < winRoundsCount; i++) {
             var firstNumber = Engine.getRandom(1, maxNumber);
             var secondNumber = Engine.getRandom(1, maxNumber);
-
             var operatorNumber = Engine.getRandom(1, operatorsCount);
 
-            if (operatorNumber == 1) {
-                operator = "+";
-            }
-            if (operatorNumber == 2) {
-                operator = "-";
-            }
-            if (operatorNumber == operatorsCount) {
-                operator = "*";
-            }
+            var operator = switch (operatorNumber) {
+                case 1 -> "+";
+                case 2 -> "-";
+                case operatorsCount -> "*";
+                default -> "";
+            };
 
             String question = firstNumber + " " + operator + " " + secondNumber;
 
@@ -40,15 +35,12 @@ public class Calc {
 
     private static int calculate(int number1, int number2, String operator) {
 
-        if (operator.equals("+")) {
-            number1 = number1 + number2;
-        }
-        if (operator.equals("-")) {
-            number1 = number1 - number2;
-        }
-        if (operator.equals("*")) {
-            number1 = number1 * number2;
-        }
+        number1 = switch (operator) {
+            case "+" -> number1 + number2;
+            case "-" -> number1 - number2;
+            case "*" -> number1 * number2;
+            default -> number1;
+        };
 
         return number1;
     }
