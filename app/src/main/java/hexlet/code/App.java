@@ -25,14 +25,22 @@ public class App {
                 Your choice:\s""");
         String choice = scanner.next();
 
+        final String greet = "1";
+        final String even = "2";
+        final String calc = "3";
+        final String gcd = "4";
+        final String prog = "5";
+        final String prime = "6";
+        final String exit = "0";
+
         switch (choice) {
-            case "1" -> Engine.greet();
-            case "2" -> Even.gameEven();
-            case "3" -> Calc.gameCalc();
-            case "4" -> GCD.gameGCD();
-            case "5" -> Progression.gameProgression();
-            case "6" -> Prime.gamePrime();
-            case "0" -> scanner.close();
+            case greet -> Engine.greet();
+            case even -> Even.gameEven();
+            case calc -> Calc.gameCalc();
+            case gcd -> GCD.gameGCD();
+            case prog -> Progression.gameProgression();
+            case prime -> Prime.gamePrime();
+            case exit -> scanner.close();
             default -> {
             }
         }

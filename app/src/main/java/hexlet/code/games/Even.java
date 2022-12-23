@@ -6,8 +6,8 @@ public class Even {
 
     public static void gameEven() {
         var gamer = Engine.greet();
-        final int winRoundsCount = 3;
         final int maxNumber = 100;
+        var winRoundsCount = Engine.getWinRoundsCount();
         var questionsAndAnswers = new String[2][winRoundsCount];
 
         for (var i = 0; i < winRoundsCount; i++) {

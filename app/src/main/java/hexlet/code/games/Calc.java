@@ -7,40 +7,49 @@ public class Calc {
     public static void gameCalc() {
         var gamer = Engine.greet();
         String operator = "";
-        String correctAnswer = "";
-        final int winRoundsCount = 3;
-        final int maxNumber = 20;
+        final int maxNumber = 100;
         final int operatorsCount = 3;
+        var winRoundsCount = Engine.getWinRoundsCount();
         var questionsAndAnswers = new String[2][winRoundsCount];
 
         for (var i = 0; i < winRoundsCount; i++) {
-            var a = Engine.getRandom(1, maxNumber);
-            var b = Engine.getRandom(1, maxNumber);
+            var firstNumber = Engine.getRandom(1, maxNumber);
+            var secondNumber = Engine.getRandom(1, maxNumber);
+
             var operatorNumber = Engine.getRandom(1, operatorsCount);
-            switch (operatorNumber) {
-                case 1 -> {
-                    operator = "+";
-                    correctAnswer = String.valueOf(a + b);
-                }
-                case 2 -> {
-                    operator = "-";
-                    correctAnswer = String.valueOf(a - b);
-                }
-                case operatorsCount -> {
-                    operator = "*";
-                    correctAnswer = String.valueOf(a * b);
-                }
-                default -> {
-                }
+            if (operatorNumber == 1) {
+                operator = "+";
+            }
+            if (operatorNumber == 2) {
+                operator = "-";
+            }
+            if (operatorNumber == operatorsCount) {
+                operator = "*";
             }
 
-            String question = a + " " + operator + " " + b;
+            String question = firstNumber + " " + operator + " " + secondNumber;
 
             questionsAndAnswers[0][i] = question;
-            questionsAndAnswers[1][i] = correctAnswer;
+            questionsAndAnswers[1][i] = String.valueOf(calculate(firstNumber, secondNumber, operator));
         }
 
         System.out.println("What is the result of the expression?");
         Engine.game(questionsAndAnswers, gamer);
     }
+
+    private static int calculate(int number1, int number2, String operator) {
+
+        if (operator.equals("+")) {
+            number1 = number1 + number2;
+        }
+        if (operator.equals("-")) {
+            number1 = number1 - number2;
+        }
+        if (operator.equals("*")) {
+            number1 = number1 * number2;
+        }
+
+        return number1;
+    }
 }
+
