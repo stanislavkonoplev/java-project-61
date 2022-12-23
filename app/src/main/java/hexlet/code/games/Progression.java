@@ -19,14 +19,14 @@ public class Progression {
             var progLength = progressionItems.length;
             var questionPosition = Engine.getRandom(1, progLength);
 
-            var questionProgression = Arrays.copyOf(progressionItems, questionPosition);
+            var questionProgression = Arrays.copyOf(progressionItems, questionPosition - 1);
             questionProgression = ArrayUtils.add(questionProgression, "..");
-            var questionProgEnd = Arrays.copyOfRange(progressionItems, questionPosition + 1, progLength);
+            var questionProgEnd = Arrays.copyOfRange(progressionItems, questionPosition, progLength);
             questionProgression = ArrayUtils.addAll(questionProgression, questionProgEnd);
             var question = String.join(" ", questionProgression);
 
             questionsAndAnswers[0][i] = question;
-            questionsAndAnswers[1][i] = progressionItems[questionPosition];
+            questionsAndAnswers[1][i] = progressionItems[questionPosition - 1];
         }
 
         System.out.println("What number is missing in the progression?");

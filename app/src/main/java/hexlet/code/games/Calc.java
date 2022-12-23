@@ -17,14 +17,13 @@ public class Calc {
             var secondNumber = Engine.getRandom(1, maxNumber);
 
             var operatorNumber = Engine.getRandom(1, operatorsCount);
-            if (operatorNumber == 1) {
-                operator = "+";
-            }
-            if (operatorNumber == 2) {
-                operator = "-";
-            }
-            if (operatorNumber == operatorsCount) {
-                operator = "*";
+
+            switch (operatorNumber) {
+                case 1 -> operator = "+";
+                case 2 -> operator = "-";
+                case operatorsCount -> operator = "*";
+                default -> {
+                }
             }
 
             String question = firstNumber + " " + operator + " " + secondNumber;
@@ -39,14 +38,12 @@ public class Calc {
 
     private static int calculate(int number1, int number2, String operator) {
 
-        if (operator.equals("+")) {
-            number1 = number1 + number2;
-        }
-        if (operator.equals("-")) {
-            number1 = number1 - number2;
-        }
-        if (operator.equals("*")) {
-            number1 = number1 * number2;
+        switch (operator) {
+            case "+" -> number1 = number1 + number2;
+            case "-" -> number1 = number1 - number2;
+            case "*" -> number1 = number1 * number2;
+            default -> {
+            }
         }
 
         return number1;
