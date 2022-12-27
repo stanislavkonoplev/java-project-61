@@ -8,18 +8,20 @@ public class Calc {
         var gamer = Engine.greet();
         final int maxNumber = 100;
         final int operatorsCount = 3;
-        var winRoundsCount = Engine.getWinRoundsCount();
-        var questionsAndAnswers = new String[2][winRoundsCount];
+        final int summarizeNumber = 1;
+        final int substractionNumber = 2;
+        final int multiplyNumber = 3;
+        var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
 
-        for (var i = 0; i < winRoundsCount; i++) {
+        for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
             var firstNumber = Engine.getRandom(1, maxNumber);
             var secondNumber = Engine.getRandom(1, maxNumber);
             var operatorNumber = Engine.getRandom(1, operatorsCount);
 
             var operator = switch (operatorNumber) {
-                case 1 -> "+";
-                case 2 -> "-";
-                case operatorsCount -> "*";
+                case summarizeNumber -> "+";
+                case substractionNumber -> "-";
+                case multiplyNumber -> "*";
                 default -> "";
             };
 

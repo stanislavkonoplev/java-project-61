@@ -7,10 +7,9 @@ public class Even {
     public static void gameEven() {
         var gamer = Engine.greet();
         final int maxNumber = 100;
-        var winRoundsCount = Engine.getWinRoundsCount();
-        var questionsAndAnswers = new String[2][winRoundsCount];
+        var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
 
-        for (var i = 0; i < winRoundsCount; i++) {
+        for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
             var question = Engine.getRandom(1, maxNumber);
             String correctAnswer = question % 2 == 0 ? "yes" : "no";
 

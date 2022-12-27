@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Engine {
 
+    public static final int WIN_ROUNDS_COUNT = 3;
+
     public static String greet() {
         Scanner scanner = new Scanner(System.in);
 
@@ -21,23 +23,11 @@ public class Engine {
         return seed.nextInt(diff + 1) + min;
     }
 
-    public static int[] getNumbers(String listOfNumbers) {
-        String[] numbersString = listOfNumbers.split(" ");
-        var numbersCount = numbersString.length;
-        var numbers = new int[numbersCount];
-
-        for (var j = 0; j < numbersCount; j++) {
-            numbers[j] = Integer.parseInt(numbersString[j]);
-        }
-
-        return numbers;
-    }
-
     public static void game(String[][] questionsAndAnswers, String playerName) {
         Scanner scanner = new Scanner(System.in);
 
         var i = 0;
-        while (i < getWinRoundsCount()) {
+        while (i < WIN_ROUNDS_COUNT) {
             System.out.println("Question: " + questionsAndAnswers[0][i]);
             String answer = scanner.next();
             System.out.println("You answer: " + answer);
@@ -47,16 +37,12 @@ public class Engine {
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
                         + questionsAndAnswers[1][i] + "'.\nLet's try again, " + playerName + "!");
+                scanner.close();
                 return;
             }
         }
 
         System.out.println("Congratulations, " + playerName + "!");
         scanner.close();
-    }
-
-    public static int getWinRoundsCount() {
-        final int winRoundsCount = 3;
-        return winRoundsCount;
     }
 }

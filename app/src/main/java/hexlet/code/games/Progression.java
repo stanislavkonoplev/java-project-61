@@ -10,11 +10,10 @@ public class Progression {
 
     public static void gameProgression() {
         var gamer = Engine.greet();
-        var winRoundsCount = Engine.getWinRoundsCount();
-        var questionsAndAnswers = new String[2][winRoundsCount];
+        var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
 
 
-        for (var i = 0; i < winRoundsCount; i++) {
+        for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
             var progressionItems = getProgression();
             var progLength = progressionItems.length;
             var questionPosition = Engine.getRandom(1, progLength);
