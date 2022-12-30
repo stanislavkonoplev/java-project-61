@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
 
@@ -14,9 +15,9 @@ public class Calc {
         var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
-            var firstNumber = Engine.getRandom(1, maxNumber);
-            var secondNumber = Engine.getRandom(1, maxNumber);
-            var operatorNumber = Engine.getRandom(1, operatorsCount);
+            var firstNumber = Utils.getRandom(1, maxNumber);
+            var secondNumber = Utils.getRandom(1, maxNumber);
+            var operatorNumber = Utils.getRandom(1, operatorsCount);
 
             var operator = switch (operatorNumber) {
                 case summarizeNumber -> "+";

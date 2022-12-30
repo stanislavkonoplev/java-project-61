@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Prime {
 
@@ -10,7 +11,7 @@ public class Prime {
         var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
-            var question = Engine.getRandom(1, maxNumber);
+            var question = Utils.getRandom(1, maxNumber);
             String correctAnswer = isPrime(question) ? "yes" : "no";
 
             questionsAndAnswers[0][i] = String.valueOf(question);

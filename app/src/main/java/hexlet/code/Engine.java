@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
@@ -15,12 +14,6 @@ public class Engine {
         System.out.println("Hello, " + playerName + "!");
 
         return playerName;
-    }
-
-    public static int getRandom(int min, int max) {
-        int diff = max - min;
-        Random seed = new Random();
-        return seed.nextInt(diff + 1) + min;
     }
 
     public static void game(String[][] questionsAndAnswers, String playerName) {

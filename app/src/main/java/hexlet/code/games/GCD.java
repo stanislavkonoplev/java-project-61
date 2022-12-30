@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
 
@@ -10,8 +11,8 @@ public class GCD {
         var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
-            var firstNumber = Engine.getRandom(1, maxNumber);
-            var secondNumber = Engine.getRandom(1, maxNumber);
+            var firstNumber = Utils.getRandom(1, maxNumber);
+            var secondNumber = Utils.getRandom(1, maxNumber);
 
             String question = firstNumber + " " + secondNumber;
             String correctAnswer = String.valueOf(getGCD(firstNumber, secondNumber));
