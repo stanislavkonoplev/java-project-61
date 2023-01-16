@@ -6,28 +6,28 @@ import hexlet.code.Utils;
 
 public class Progression {
 
+    private static final int MIN_PROG_LENGTH = 5;
+    private static final int MAX_PROG_LENGTH = 10;
+    private static final int MAX_STEP = 5;
+    private static final int MAX_START_NUMBER = 20;
+    private static final String EXERCISE = "What number is missing in the progression?";
+
     public static void gameProgression() {
-        var gamer = Engine.greet();
-        var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
+        var questionsAndAnswers = new String[Engine.WIN_ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
-            final int minProgLength = 5;
-            final int maxProgLength = 10;
-            final int maxStep = 5;
-            final int maxStartNumber = 20;
-            var startNumber = Utils.getRandom(1, maxStartNumber);
-            var progLength = Utils.getRandom(minProgLength, maxProgLength);
-            var step = Utils.getRandom(2, maxStep);
+            var startNumber = Utils.getRandom(1, MAX_START_NUMBER);
+            var progLength = Utils.getRandom(MIN_PROG_LENGTH, MAX_PROG_LENGTH);
+            var step = Utils.getRandom(2, MAX_STEP);
             var questionPosition = Utils.getRandom(0, progLength - 1);
             var progressionItems = getProgression(startNumber, step, progLength);
 
-            questionsAndAnswers[1][i] = progressionItems[questionPosition];
+            questionsAndAnswers[i][1] = progressionItems[questionPosition];
             progressionItems[questionPosition] = "..";
-            questionsAndAnswers[0][i] = String.join(" ", progressionItems);
+            questionsAndAnswers[i][0] = String.join(" ", progressionItems);
         }
 
-        System.out.println("What number is missing in the progression?");
-        Engine.game(questionsAndAnswers, gamer);
+        Engine.game(questionsAndAnswers, EXERCISE);
     }
 
     private static String[] getProgression(int startNumber, int step, int progLength) {

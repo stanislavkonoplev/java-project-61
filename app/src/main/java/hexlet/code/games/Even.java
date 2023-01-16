@@ -5,21 +5,21 @@ import hexlet.code.Utils;
 
 public class Even {
 
+    private static final int MAX_NUMBER = 100;
+    private static final String EXERCISE =  "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
     public static void gameEven() {
-        var gamer = Engine.greet();
-        final int maxNumber = 100;
-        var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
+        var questionsAndAnswers = new String[Engine.WIN_ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
-            var question = Utils.getRandom(1, maxNumber);
+            var question = Utils.getRandom(1, MAX_NUMBER);
             String correctAnswer = isEven(question) ? "yes" : "no";
 
-            questionsAndAnswers[0][i] = String.valueOf(question);
-            questionsAndAnswers[1][i] = correctAnswer;
+            questionsAndAnswers[i][0] = String.valueOf(question);
+            questionsAndAnswers[i][1] = correctAnswer;
         }
 
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Engine.game(questionsAndAnswers, gamer);
+        Engine.game(questionsAndAnswers, EXERCISE);
     }
 
     private static boolean isEven(int number) {

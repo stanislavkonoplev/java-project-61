@@ -5,47 +5,37 @@ import hexlet.code.Utils;
 
 public class Calc {
 
+    private static final String[] OPERATORS = {"+", "-", "*"};
+    private static final int MAX_NUMBER = 100;
+    private static final String EXERCISE =  "What is the result of the expression?";
+
     public static void gameCalc() {
-        var gamer = Engine.greet();
-        final int maxNumber = 100;
-        final int operatorsCount = 3;
-        final int summarizeNumber = 1;
-        final int substractionNumber = 2;
-        final int multiplyNumber = 3;
-        var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
+        var operatorsCount = OPERATORS.length;
+        var questionsAndAnswers = new String[Engine.WIN_ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
-            var firstNumber = Utils.getRandom(1, maxNumber);
-            var secondNumber = Utils.getRandom(1, maxNumber);
-            var operatorNumber = Utils.getRandom(1, operatorsCount);
-
-            var operator = switch (operatorNumber) {
-                case summarizeNumber -> "+";
-                case substractionNumber -> "-";
-                case multiplyNumber -> "*";
-                default -> "";
-            };
+            var firstNumber = Utils.getRandom(1, MAX_NUMBER);
+            var secondNumber = Utils.getRandom(1, MAX_NUMBER);
+            var operator = OPERATORS[Utils.getRandom(0, operatorsCount - 1)];
 
             String question = firstNumber + " " + operator + " " + secondNumber;
 
-            questionsAndAnswers[0][i] = question;
-            questionsAndAnswers[1][i] = String.valueOf(calculate(firstNumber, secondNumber, operator));
+            questionsAndAnswers[i][0] = question;
+            questionsAndAnswers[i][1] = String.valueOf(calculate(firstNumber, secondNumber, operator));
         }
 
-        System.out.println("What is the result of the expression?");
-        Engine.game(questionsAndAnswers, gamer);
+        Engine.game(questionsAndAnswers, EXERCISE);
     }
 
     private static int calculate(int number1, int number2, String operator) {
 
-        number1 = switch (operator) {
+        return switch (operator) {
             case "+" -> number1 + number2;
             case "-" -> number1 - number2;
             case "*" -> number1 * number2;
-            default -> number1;
+            default -> throw new Error("Unknown operator: " + operator);
         };
 
-        return number1;
     }
 }
 

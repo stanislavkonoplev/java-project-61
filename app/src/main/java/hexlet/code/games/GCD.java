@@ -5,24 +5,24 @@ import hexlet.code.Utils;
 
 public class GCD {
 
+    private static final int MAX_NUMBER = 100;
+    private static final String EXERCISE =  "Find the greatest common divisor of given numbers.";
+
     public static void gameGCD() {
-        var gamer = Engine.greet();
-        final int maxNumber = 100;
-        var questionsAndAnswers = new String[2][Engine.WIN_ROUNDS_COUNT];
+        var questionsAndAnswers = new String[Engine.WIN_ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {
-            var firstNumber = Utils.getRandom(1, maxNumber);
-            var secondNumber = Utils.getRandom(1, maxNumber);
+            var firstNumber = Utils.getRandom(1, MAX_NUMBER);
+            var secondNumber = Utils.getRandom(1, MAX_NUMBER);
 
             String question = firstNumber + " " + secondNumber;
             String correctAnswer = String.valueOf(getGCD(firstNumber, secondNumber));
 
-            questionsAndAnswers[0][i] = question;
-            questionsAndAnswers[1][i] = correctAnswer;
+            questionsAndAnswers[i][0] = question;
+            questionsAndAnswers[i][1] = correctAnswer;
         }
 
-        System.out.println("Find the greatest common divisor of given numbers.");
-        Engine.game(questionsAndAnswers, gamer);
+        Engine.game(questionsAndAnswers, EXERCISE);
     }
 
     private static int getGCD(int firstNumber, int secondNumber) {

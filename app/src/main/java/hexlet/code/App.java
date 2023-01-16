@@ -23,6 +23,7 @@ public class App {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
+
         String choice = scanner.next();
 
         final String greet = "1";
@@ -34,15 +35,14 @@ public class App {
         final String exit = "0";
 
         switch (choice) {
-            case greet -> Engine.greet();
+            case greet -> Engine.game(new String[0][0], "greet");
             case even -> Even.gameEven();
             case calc -> Calc.gameCalc();
             case gcd -> GCD.gameGCD();
             case prog -> Progression.gameProgression();
             case prime -> Prime.gamePrime();
             case exit -> scanner.close();
-            default -> {
-            }
+            default -> throw new Error("Unknown command: " + choice);
         }
 
     }
