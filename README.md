@@ -16,13 +16,13 @@ Mind Games - a set of five console games. Each game asks questions that need to 
 
 ## Run
 
-   make run
+   make run-dist
 
 ## Gameplay demonstration
-Even: https://asciinema.org/a/xJ1JJFXZ2Xxq2l2l2SlNsbekt
-Calc: https://asciinema.org/a/zbwbakBUpdolKDyVP7n2ZtPmG
-GCD: https://asciinema.org/a/AhnC6c5NRhhDX9fjfDnQVqIra
-Progression: https://asciinema.org/a/Unzdogt6rnmS1d2nBS1C4EMwq
-Prime: https://asciinema.org/a/wRNDnNceZrdhpxPNL5JXbqzpl
+[Even number](https://asciinema.org/a/xJ1JJFXZ2Xxq2l2l2SlNsbekt),
+[Calculator](https://asciinema.org/a/zbwbakBUpdolKDyVP7n2ZtPmG),
+[Greatest common divisor](https://asciinema.org/a/AhnC6c5NRhhDX9fjfDnQVqIra),
+[Progression](https://asciinema.org/a/Unzdogt6rnmS1d2nBS1C4EMwq),
+[Prime number](https://asciinema.org/a/wRNDnNceZrdhpxPNL5JXbqzpl)
 
 
