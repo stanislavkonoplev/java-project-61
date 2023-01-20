@@ -35,7 +35,7 @@ public class App {
         final String exit = "0";
 
         switch (choice) {
-            case greet -> Engine.game(new String[0][0], "greet");
+            case greet -> Cli.greet();
             case even -> Even.gameEven();
             case calc -> Calc.gameCalc();
             case gcd -> GCD.gameGCD();

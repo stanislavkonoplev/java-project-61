@@ -26,7 +26,6 @@ public class GCD {
     }
 
     private static int getGCD(int firstNumber, int secondNumber) {
-
         while (firstNumber != 0 && secondNumber != 0) {
             if (firstNumber > secondNumber) {
                 firstNumber = firstNumber % secondNumber;

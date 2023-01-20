@@ -8,16 +8,9 @@ public class Engine {
 
     public static void game(String[][] questionsAndAnswers, String exercise) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
         String playerName = scanner.next();
         System.out.println("Hello, " + playerName + "!");
-
-        if (exercise.equals("greet")) {
-            scanner.close();
-            return;
-        }
-
         System.out.println(exercise);
 
         var i = 0;

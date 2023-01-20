@@ -28,14 +28,12 @@ public class Calc {
     }
 
     private static int calculate(int number1, int number2, String operator) {
-
         return switch (operator) {
             case "+" -> number1 + number2;
             case "-" -> number1 - number2;
             case "*" -> number1 * number2;
             default -> throw new Error("Unknown operator: " + operator);
         };
-
     }
 }
 

@@ -11,12 +11,14 @@ Mind Games - a set of five console games. Each game asks questions that need to 
 - Definition of a prime number.
 
 ## Setup
-
+```sh
    make install
+```
 
 ## Run
-
+```sh
    make run-dist
+```
 
 ## Gameplay demonstration
 [Even number](https://asciinema.org/a/xJ1JJFXZ2Xxq2l2l2SlNsbekt),
