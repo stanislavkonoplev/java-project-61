@@ -8,7 +8,7 @@ public class Even {
     private static final int MAX_NUMBER = 100;
     private static final String EXERCISE =  "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    public static void gameEven() {
+    public static void playEven() {
         var questionsAndAnswers = new String[Engine.WIN_ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {

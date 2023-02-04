@@ -8,7 +8,7 @@ public class GCD {
     private static final int MAX_NUMBER = 100;
     private static final String EXERCISE =  "Find the greatest common divisor of given numbers.";
 
-    public static void gameGCD() {
+    public static void playGCD() {
         var questionsAndAnswers = new String[Engine.WIN_ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {

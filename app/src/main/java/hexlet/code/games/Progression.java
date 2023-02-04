@@ -12,7 +12,7 @@ public class Progression {
     private static final int MAX_START_NUMBER = 20;
     private static final String EXERCISE = "What number is missing in the progression?";
 
-    public static void gameProgression() {
+    public static void playProgression() {
         var questionsAndAnswers = new String[Engine.WIN_ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {

@@ -36,11 +36,11 @@ public class App {
 
         switch (choice) {
             case greet -> Cli.greet();
-            case even -> Even.gameEven();
-            case calc -> Calc.gameCalc();
-            case gcd -> GCD.gameGCD();
-            case prog -> Progression.gameProgression();
-            case prime -> Prime.gamePrime();
+            case even -> Even.playEven();
+            case calc -> Calc.playCalc();
+            case gcd -> GCD.playGCD();
+            case prog -> Progression.playProgression();
+            case prime -> Prime.playPrime();
             case exit -> scanner.close();
             default -> throw new Error("Unknown command: " + choice);
         }

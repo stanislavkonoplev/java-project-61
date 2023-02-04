@@ -8,7 +8,7 @@ public class Prime {
     private static final int MAX_NUMBER = 100;
     private static final String EXERCISE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static void gamePrime() {
+    public static void playPrime() {
         var questionsAndAnswers = new String[Engine.WIN_ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.WIN_ROUNDS_COUNT; i++) {

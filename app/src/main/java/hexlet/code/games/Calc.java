@@ -9,7 +9,7 @@ public class Calc {
     private static final int MAX_NUMBER = 100;
     private static final String EXERCISE =  "What is the result of the expression?";
 
-    public static void gameCalc() {
+    public static void playCalc() {
         var operatorsCount = OPERATORS.length;
         var questionsAndAnswers = new String[Engine.WIN_ROUNDS_COUNT][2];
 
